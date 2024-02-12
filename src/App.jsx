@@ -1,7 +1,13 @@
+import Header from './components/Header';
+import Form from './components/Form';
+import PatientsList from './components/PatientsList';
+
 function App() {
   return (
       <>
-        <h1>Hello World</h1>
+        <Header />
+        <Form />
+        <PatientsList />
       </>
     )
   }
