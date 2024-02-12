@@ -1,8 +1,5 @@
-# React + Vite
+# Patient Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Patient manager is a web app made with Reactjs and Vite for managing patient information. This is practice with the focus on learning this technologies.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is part of Udemy's Course: Aprende React: Hooks, State, MERN, Next.js, Remix Run, Redux, Tailwind CSS, Prisma. by Juan Pablo De la Torre Valdez
