@@ -3,8 +3,8 @@ const Form = () => {
     <div className="md:w-1/2 lg:w-2/5">
       <h2 className="font-black text-3xl text-center">Patients Follow Up</h2>
       <p className="text-lg mt-5 text-center mb-10">
-        Add patients and {" "}
-        <span className="text-indigo-600 font-bold">Manage</span>
+        Add {""}
+        <span className="text-indigo-600 font-bold">Patients</span>
       </p>
       <form className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
         <div className="mb-5">
@@ -19,7 +19,7 @@ const Form = () => {
             type="text"
             placeholder="Pet's Name"
             className="w-full border-2 p-2 mt-2 placeholder-gray-400 rounded-md"
-          ></input>
+          />
         </div>
         <div className="mb-5">
           <label
@@ -33,7 +33,7 @@ const Form = () => {
             type="text"
             placeholder="Owner's Name"
             className="w-full border-2 p-2 mt-2 placeholder-gray-400 rounded-md"
-          ></input>
+          />
         </div>
         <div className="mb-5">
           <label
@@ -47,7 +47,7 @@ const Form = () => {
             type="email"
             placeholder="email@example.com"
             className="w-full border-2 p-2 mt-2 placeholder-gray-400 rounded-md"
-          ></input>
+          />
         </div>
         <div className="mb-5">
           <label
@@ -60,7 +60,7 @@ const Form = () => {
             id="register"
             type="date"
             className="w-full border-2 p-2 mt-2 placeholder-gray-400 rounded-md"
-          ></input>
+          />
         </div>
         <div className="mb-5">
           <label
@@ -72,7 +72,7 @@ const Form = () => {
           <textarea
             className="w-full border-2 p-2 mt-2 placeholder-gray-400 rounded-md"
             placeholder="Describe pet's symptoms"
-          ></textarea>
+          / >
         </div>
         <input
           type="submit"
