@@ -1,6 +1,6 @@
-import { useState} from "react";
+import {useState} from "react";
 
-const Form = () => {
+const Form = ({patients, setPatients}) => {
   // Hooks
   const [name, setName] = useState("");
   const [owner, setOwner] = useState("");
@@ -15,9 +15,26 @@ const Form = () => {
     // Validate form
     if ([name, owner, email, register, symptoms].includes("")) {
       setError(true);
-    } else {
-      setError(false);
+      return;
     }
+    setError(false);
+    console.log("Formulario enviado");
+    // Object with patient data
+    const objectPatient = {
+      name,
+      owner,
+      email,
+      register,
+      symptoms,
+    };
+    //!!!! In React, we dont modify the array directly!!!!
+    setPatients([...patients, objectPatient]); // Spread operator "..." create a new directly!!!! array with the new papta
+    // Reset form
+    setName("");
+    setOwner("");
+    setEmail("");
+    setRegister("");
+    setSymptoms("");
   };
 
   return (
@@ -31,7 +48,11 @@ const Form = () => {
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
       >
-        {error && <p className="bg-red-100 p-3 text-center text-red-700 mb-5">All fields are required</p>}
+        {error && (
+          <p className="bg-red-100 p-3 text-center text-red-700 mb-5">
+            All fields are required
+          </p>
+        )}
         <div className="mb-5">
           <label
             htmlFor="pet"
