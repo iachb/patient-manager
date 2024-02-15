@@ -1,6 +1,7 @@
-import {useState} from "react";
+import { useState } from "react";
+import Error from "./Error";
 
-const Form = ({patients, setPatients}) => {
+const Form = ({ patients, setPatients }) => {
   // Hooks
   const [name, setName] = useState("");
   const [owner, setOwner] = useState("");
@@ -48,11 +49,7 @@ const Form = ({patients, setPatients}) => {
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
       >
-        {error && (
-          <p className="bg-red-100 p-3 text-center text-red-700 mb-5">
-            All fields are required
-          </p>
-        )}
+        {error && <Error>All fields are required</Error>}
         <div className="mb-5">
           <label
             htmlFor="pet"

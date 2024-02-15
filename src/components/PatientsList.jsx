@@ -11,9 +11,6 @@ const PatientsList = () => {
         </span>
       </p>
       <Patient />
-      <Patient />
-      <Patient />
-      <Patient />
     </div>
   );
 };
