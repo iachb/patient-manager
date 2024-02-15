@@ -11,6 +11,13 @@ const Form = ({ patients, setPatients }) => {
 
   const [error, setError] = useState(false);
 
+  const generateId = () => {
+    const random = Math.random().toString(36).substr(2);
+    const date = new Date().toString(36);
+
+    return random + date;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Validate form
@@ -19,7 +26,6 @@ const Form = ({ patients, setPatients }) => {
       return;
     }
     setError(false);
-    console.log("Formulario enviado");
     // Object with patient data
     const objectPatient = {
       name,
@@ -27,6 +33,7 @@ const Form = ({ patients, setPatients }) => {
       email,
       register,
       symptoms,
+      id: generateId(),
     };
     //!!!! In React, we dont modify the array directly!!!!
     setPatients([...patients, objectPatient]); // Spread operator "..." create a new directly!!!! array with the new papta
