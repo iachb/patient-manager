@@ -4,16 +4,9 @@ import Form from "./components/Form";
 import PatientsList from "./components/PatientsList";
 
 function App() {
-  const [patients, setPatients] = useState([]);
+  const initialState = JSON.parse(localStorage.getItem("patients")) || [];
+  const [patients, setPatients] = useState([initialState]);
   const [patient, setPatient] = useState({});
-
-  useEffect(() => {
-    const obtainLocalStorage = () => {
-      const patientsStorage = JSON.parse(localStorage.getItem("patients")) ?? [];
-      setPatients(patientsStorage);
-    };
-    obtainLocalStorage();
-  }, []);
 
   useEffect(() => {
     localStorage.setItem("patients", JSON.stringify(patients));
