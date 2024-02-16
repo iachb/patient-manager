@@ -25,7 +25,7 @@ const PatientsList = ({ patients, setPatient, erasePatient}) => {
         </>
       ) : (
         <>
-          <h2 className="font-black text-3xl text-center">No patients</h2>
+          <h2 className="font-black text-3xl text-center">No patients yet</h2>
           <p className="text-lg mt-5 text-center mb-10">
             Start adding patients {" "}
             <span className="text-indigo-600 font-bold">
