@@ -4,4 +4,4 @@ Patient manager is a web app made with Reactjs and Vite for managing veterinary 
 
 This project is part of Udemy's Course: Aprende React: Hooks, State, MERN, Next.js, Remix Run, Redux, Tailwind CSS, Prisma. by Juan Pablo De la Torre Valdez
 
-You can access the site [here](patient-manager-veterinary.netlify.app)
+You can access the site [here](https://patient-manager-veterinary.netlify.app)
