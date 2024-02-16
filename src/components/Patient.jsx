@@ -3,7 +3,7 @@ import {useEffect} from "react";
 const Patient = ({ patient, setPatient }) => {
 
   useEffect(() => {
-    setPatient(patient);
+ 
   }
   , [patient, setPatient]);
   

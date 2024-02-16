@@ -12,7 +12,7 @@ const Form = ({ patients, setPatients, patient }) => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (Object.keys(patient).length > 0) {
+    if (Object.keys(patient).length !== 0){
       setName(patient.name);
       setOwner(patient.owner);
       setEmail(patient.email);
@@ -45,6 +45,12 @@ const Form = ({ patients, setPatients, patient }) => {
       symptoms,
       id: generateId(),
     };
+
+    if (patient.id) {
+      console.log("Edit patient");
+    } else {
+      console.log("Add patient");
+    }
     //!!!! In React, we dont modify the array directly!!!!
     setPatients([...patients, objectPatient]); // Spread operator "..." create a new directly!!!! array with the new papta
     // Reset form
