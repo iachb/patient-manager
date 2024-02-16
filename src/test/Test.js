@@ -8,7 +8,6 @@ const Form = ({ patients, setPatients, patient }) => {
   const [email, setEmail] = useState("");
   const [register, setRegister] = useState("");
   const [symptoms, setSymptoms] = useState("");
-
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -83,68 +82,7 @@ const Form = ({ patients, setPatients, patient }) => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div className="mb-5">
-          <label
-            htmlFor="owner"
-            className="block text-gray-700 uppercase font-bold"
-          >
-            Owner&apos;s Name
-          </label>
-          <input
-            id="owner"
-            type="text"
-            placeholder="Owner's Name"
-            className="w-full border-2 p-2 mt-2 placeholder-gray-400 rounded-md"
-            value={owner}
-            onChange={(e) => setOwner(e.target.value)}
-          />
-        </div>
-        <div className="mb-5">
-          <label
-            htmlFor="email"
-            className="block text-gray-700 uppercase font-bold"
-          >
-            E-mail
-          </label>
-          <input
-            id="email"
-            type="email"
-            placeholder="email@example.com"
-            className="w-full border-2 p-2 mt-2 placeholder-gray-400 rounded-md"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="mb-5">
-          <label
-            htmlFor="register"
-            className="block text-gray-700 uppercase font-bold"
-          >
-            Register
-          </label>
-          <input
-            id="register"
-            type="date"
-            className="w-full border-2 p-2 mt-2 placeholder-gray-400 rounded-md"
-            value={register}
-            onChange={(e) => setRegister(e.target.value)}
-          />
-        </div>
-        <div className="mb-5">
-          <label
-            htmlFor="symptoms"
-            className="block text-gray-700 uppercase font-bold"
-          >
-            Symptoms
-          </label>
-          <textarea
-            id="symptoms"
-            className="w-full border-2 p-2 mt-2 placeholder-gray-400 rounded-md"
-            placeholder="Describe pet's symptoms"
-            value={symptoms}
-            onChange={(e) => setSymptoms(e.target.value)}
-          />
-        </div>
+        {/* Other form fields */}
         <input
           type="submit"
           className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 rounded-md cursor-pointer transition-all duration-300 ease-in-out"
