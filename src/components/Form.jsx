@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Error from "./Error";
 
-const Form = ({ patients, setPatients, patient }) => {
+const Form = ({ patients, setPatients, patient, setPatient }) => {
   // Hooks
   const [name, setName] = useState("");
   const [owner, setOwner] = useState("");
@@ -12,7 +12,7 @@ const Form = ({ patients, setPatients, patient }) => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (Object.keys(patient).length !== 0){
+    if (Object.keys(patient).length !== 0) {
       setName(patient.name);
       setOwner(patient.owner);
       setEmail(patient.email);
@@ -43,16 +43,26 @@ const Form = ({ patients, setPatients, patient }) => {
       email,
       register,
       symptoms,
-      id: generateId(),
     };
 
     if (patient.id) {
-      console.log("Edit patient");
+      // Edit patient
+      objectPatient.id = patient.id;
+      // Updates the patients array by replacing the patient with the specified id with the updated patient object.
+      const updatedPatients = patients.map((p) =>
+        p.id === patient.id ? objectPatient : p
+      );
+      setPatients(updatedPatients);
+      setPatient({});
     } else {
-      console.log("Add patient");
+      // Add new patient
+      objectPatient.id = generateId();
+      setPatients([...patients, objectPatient]);
     }
+
     //!!!! In React, we dont modify the array directly!!!!
-    setPatients([...patients, objectPatient]); // Spread operator "..." create a new directly!!!! array with the new papta
+    setPatients([...patients, objectPatient]); // Spread operator "..." create a new array with the new data
+
     // Reset form
     setName("");
     setOwner("");
