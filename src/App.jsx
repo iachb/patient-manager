@@ -4,8 +4,7 @@ import Form from "./components/Form";
 import PatientsList from "./components/PatientsList";
 
 function App() {
-  const initialState = JSON.parse(localStorage.getItem("patients")) || [];
-  const [patients, setPatients] = useState([initialState]);
+  const [patients, setPatients] = useState(JSON.parse(localStorage.getItem("patients")) ?? []);
   const [patient, setPatient] = useState({});
 
   useEffect(() => {
