@@ -23,8 +23,7 @@ const Form = ({ patients, setPatients, patient, setPatient }) => {
 
   const generateId = () => {
     const random = Math.random().toString(36).substr(2);
-    const date = new Date().toString(36);
-
+    const date = Date.now().toString(36)
     return random + date;
   };
 
@@ -49,19 +48,17 @@ const Form = ({ patients, setPatients, patient, setPatient }) => {
       // Edit patient
       objectPatient.id = patient.id;
       // Updates the patients array by replacing the patient with the specified id with the updated patient object.
-      const updatedPatients = patients.map((p) =>
-        p.id === patient.id ? objectPatient : p
-      );
+      const updatedPatients = patients.map( patientState => patientState.id === patient.id ? objectPatient : patientState )
       setPatients(updatedPatients);
       setPatient({});
     } else {
       // Add new patient
       objectPatient.id = generateId();
+
+    /*In React, we dont modify the array directly!!!!
+    Spread operator "..." create a new array with the new data */
       setPatients([...patients, objectPatient]);
     }
-
-    //!!!! In React, we dont modify the array directly!!!!
-    setPatients([...patients, objectPatient]); // Spread operator "..." create a new array with the new data
 
     // Reset form
     setName("");

@@ -1,11 +1,12 @@
-import {useEffect} from "react";
 
-const Patient = ({ patient, setPatient }) => {
+const Patient = ({ patient, setPatient, erasePatient }) => {
 
-  useEffect(() => {
- 
-  }
-  , [patient, setPatient]);
+  const handleDelete = () => {
+    const answer = confirm("Are you sure you want to delete this patient?");
+    if (answer){
+      erasePatient(patient.id);
+    }
+  };
   
   return (
     <div className="mx-5 my-10 mt-5 bg-white shadow-md m-3 px-5 py-10 rounded-xl">
@@ -40,6 +41,7 @@ const Patient = ({ patient, setPatient }) => {
         <button
           type="button"
           className="py-2 px-10 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg uppercase"
+          onClick={handleDelete}
         >
           Delete
         </button>
